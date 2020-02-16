@@ -1,5 +1,12 @@
 ﻿@page "/admin"
+<AuthorizeView>
+    <Authorized>
+        <h1>This page will be visible only to MSOL users</h1>
+        <p>This will be used to manage user accounts.</p>
+        <p>Create new accounts, Authorize self created accounts etc.</p>
+    </Authorized>
+    <NotAuthorized>
+        <p>Sorry, you are not authorized to view this page.</p>
+    </NotAuthorized>
+</AuthorizeView>
 
-<h1>This page will be visible only to MSOL users</h1>
-<p>This will be used to manage user accounts.</p>
-<p>Create new accounts, Authorize self created accounts etc.</p>

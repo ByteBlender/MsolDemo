@@ -1,2 +1,12 @@
 ﻿@page "/"
-    <h1>Welome to the file uploader</h1>
+    <h1>Welome to the Mailing Solutions file manager</h1>
+<br />
+<AuthorizeView>
+    <Authorized>
+        <p> Use the <a href="/uploader">File Manager</a> to sumbit your files to Mailing Solutions.</p>
+    </Authorized>
+    <NotAuthorized>
+        <p>Please <a href="Identity/Account/Login">Login</a> to continue.</p>
+    </NotAuthorized>
+</AuthorizeView>
+
