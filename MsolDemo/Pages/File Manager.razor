@@ -1,0 +1,31 @@
+﻿@page "/uploader"
+@using BlazorFileUploader
+    <AuthorizeView>
+        <Authorized>
+            <h1>File Uploader</h1>
+            <br />
+            <br />
+            <p>Select file to upload</p>
+            <InputFile OnChange="HandleFileSelected" />
+            <br />
+            <br />
+           
+            <p>Job reference</p>
+            <input type="text" />
+            <br />
+            <input type="button" value="Submit" />
+
+            @code{
+                IFileListEntry file;
+
+                void HandleFileSelected(IFileListEntry[] files)
+                {
+                    file = files.FirstOrDefault();
+                }
+            }
+        </Authorized>
+     <NotAuthorized>
+         Please <a href="Identity/Account/Login">Login</a> to continue.
+     </NotAuthorized>
+        
+    </AuthorizeView>
